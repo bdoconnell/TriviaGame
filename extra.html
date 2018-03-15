@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+
+  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <body>
+    <div class="mx-auto" style="width: 800px;">
+      <div class="text-center"       
+        <div class="jumbotron jumbotron-fluid" style="background-color: aqua">
+          <div class = "container">
+<br>
+<br>
+            <h1 class="text-center">Dog-on Trivial Trivia!</h1>
+<br>
+<br>
+             
+              <button id="start">Start</button>
+              <button id="stop">Stop</button>
+              <div id="show-number"></div>   
+             
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script type="text/javascript">
+
+    //  Interval Demonstration
+    
+ 
+    var number = 30;
+
+//  Variable that will hold our interval ID when we execute
+//  the "run" function
+var intervalId;
+//$("#stop").on("click", stop);{
+   // alert("Game Over!\n Your Totals are:\n# Correct:\n# Incorrect:");   
+    // When the start button gets clicked, run the start fuction.
+    $("#start").on("click", run);
+    //  When the stop button gets clicked, run the stop function.
+   $("#stop").on("click", stop);
+
+function run() {
+  clearInterval(intervalId);
+  intervalId = setInterval(decrement, 1000);
+}
+
+//  The decrement function.
+function decrement() {
+
+  //  Decrease number by one.
+  number--;
+
+  //  Show the number in the #show-number tag.
+  $("#show-number").html("<h2> Time remaining: " + number +  " Seconds </h2>");
+
+
+  //  Once number hits zero...
+  if (number < 0) {
+
+    //  ...run the stop function.
+    stop();
+
+    //  Alert the user that time is up.
+    //alert("Game Over!\n Your Totals are:\n# Correct:\n# Incorrect:");
+    alert("Game Over!\n# Correct:" + numCorrect + "\n# Wrong:" + numWrong );
+   
+  }
+}
+
+//  The stop function
+function stop() {
+
+  //  Clears our intervalId
+  //  We just pass the name of the interval
+  //  to the clearInterval function.
+  clearInterval(intervalId);
+}
+
+//  Execute the run function.
+run();
+
+//document.querySelector('input[name="breed"]:checked').value
+//$('input[name=breed]:correct').val();
+//tally number of correct and incorrect answers.
+ var numCorrect = 0;
+ var numWrong = 0;
+  var correctAnswers = ["3","1","5","1","4","5","3","3","1","2"]; 
+    
+   // $('input[name=breed]:correct').val();{
+numCorrect = 0; numCorrect < 11; numCorrect++;
+//if correct answer is chosen correct tally adds 1.
+if (correctAnswers === [] & correct) 
+ numCorrect++;
+
+//}
+  //Else: the incorrect tally adds 1.  
+else {
+numWrong++;
+} 
+
+</script>
+
+
+<br>
+<br>
+<form>
+    Which breed of dog is the tallest?<br>
+    <input type="radio" name="breed" value="1"> Mastiff
+    <input type="radio" name="breed" value="2"> Great Dane
+    <input type="radio" name="breed" value="correct"> Irish Wolfhound
+    <input type="radio" name="breed" value="4"> St Bernard                        
+    <input type="radio" name="breed" value="5"> Greyhound
+</form>
+  <br>
+<form>
+    Which breed of dog is the heaviest?<br>
+    <input type="radio" name="breed" value="correct"> Mastiff
+    <input type="radio" name="breed" value="2"> Great Dane
+    <input type="radio" name="breed" value="3"> Irish Wolfhound
+    <input type="radio" name="breed" value="4"> St Bernard                        
+    <input type="radio" name="breed" value="5"> Greyhound
+</form>
+  <br>
+  <form>
+    Which breed of dog is the fastest?<br>
+    <input type="radio" name="breed" value="1"> Mastiff
+    <input type="radio" name="breed" value="2"> Great Dane
+    <input type="radio" name="breed" value="3"> Irish Wolfhound
+    <input type="radio" name="breed" value="4"> St Bernard                        
+    <input type="radio" name="breed" value="correct"> Greyhound    
+  </form>
+  <br>      
+      <form>
+      which breed of dog is the smallest?<br> 
+      <input type="radio" name="breed" value="correct"> Chihuahua
+      <input type="radio" name="breed" value="2"> Miniature poodle
+      <input type="radio" name="breed" value="3"> Yotkie      
+      <input type="radio" name="breed" value="4"> Maltese                       
+      <input type="radio" name="breed" value="5"> Pomeranian
+      
+      </form>
+      <br>
+      <form>
+        What is the most popular dog in the USA?<br>
+        <input type="radio" name="breed" value="1"> Golden Retriever
+        <input type="radio" name="breed" value="2"> Pit bull
+        <input type="radio" name="breed" value="3"> Boxer
+        <input type="radio" name="breed" value="correct"> Labradore Retriever                      
+        <input type="radio" name="breed" value="5"> Bulldog
+        
+      </form>
+      <br>
+      <form>
+        What is the most popular dog in the world?<br>
+        <input type="radio" name="breed" value="1"> Bulldog
+        <input type="radio" name="breed" value="2"> Boxer
+        <input type="radio" name="breed" value="3"> Golden Retriever
+        <input type="radio" name="breed" value="4"> Pit bull                       
+        <input type="radio" name="breed" value="correct"> Labradore Retriever
+        
+      </form>
+      <br>
+      <form>
+       What breed of dog is the smartest?<br> 
+        <input type="radio" name="breed" value="1"> Labradore Retriever
+        <input type="radio" name="breed" value="2"> German Shepherd
+        <input type="radio" name="breed" value="correct"> Border collie
+        <input type="radio" name="breed" value="4"> Golden Retriever                     
+        <input type="radio" name="breed" value="5"> Poodle
+        
+      </form>
+      <br>
+                      
+      <form>
+        What is the dumbest breed of dog?<br>
+        <input type="radio" name="breed" value="1"> Bulldog
+        <input type="radio" name="breed" value="2"> Mastiff
+        <input type="radio" name="breed" value="correct"> Afgan Hound
+        <input type="radio" name="breed" value="4"> Chow Chow                      
+        <input type="radio" name="breed" value="5"> BeagleS
+        
+      </form>
+      
+          <br>
+              <br>
+              <br>
+  
+              
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</div>
+</div>
+</html>
+</body>
+</html>
